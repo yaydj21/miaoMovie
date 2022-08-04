@@ -1,0 +1,195 @@
+/* pages/buyTicket/buyTicket.wxss */
+.moveInfo_top {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 366rpx;
+    box-sizing: border-box;
+    padding: 30rpx;
+    filter: blur(0);
+    overflow: hidden;
+}
+
+.moveInfo_background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: blur(30rpx);
+    z-index: -1;
+}
+
+.moveInfo_mask {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #40454e;
+    opacity: 0.55;
+}
+.banner_items{
+    display: flex;
+    height: 300rpx;
+    align-items: center;
+}
+.banner_img{
+    width: 170rpx;
+    height: 270rpx;
+    margin-right: 20rpx;
+}
+.banner_img:nth-child(1){
+    margin-left: 10rpx;
+}
+
+.click_banner_img{
+    width: 190rpx;
+    height: 280rpx;
+    border: 4rpx solid #fff;
+    margin-right: 20rpx;
+    transition: all 0.5s;
+}
+.moveInfo_bottom{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    padding: 20rpx 0;
+    background-color: #fff;
+    border-bottom: 2rpx solid rgb(221, 220, 220, .5);
+}
+.moveInfo_bottom_title{
+    display: flex;
+}
+.moveInfo_bottom_nm{
+    font-size: 32rpx;
+}
+.moveInfo_bottom_sc{
+    color: #ffb400;
+    font-size: 28rpx;
+    padding-top: 5rpx;
+    margin-left: 4rpx;
+}
+.moveInfo_bottom_desc{
+    color: #999;
+    font-size: 28rpx;
+    padding: 5rpx 0;
+}
+.time_items{
+    background-color: #fff;
+}
+.time_item{
+    display: flex;
+    color: #40454e;
+}
+.dateshow{
+    display: flex;
+    justify-content: center;
+    width: 190rpx;
+    padding: 20rpx 30rpx;
+    font-size: 30rpx;
+}
+.dateNewshow{
+    display: flex;
+    justify-content: center;
+    width: 190rpx;
+    padding: 20rpx 30rpx;
+    font-size: 30rpx;
+    color: red;
+    border-bottom: 4rpx solid red;
+}
+.detail_time{
+    padding-left: 20rpx;
+}
+.lists_item{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    border-bottom: 1px solid rgb(221, 220, 220, .5);
+    padding-bottom: 20rpx;
+}
+.tm{
+    font-size: 36rpx;
+}
+.th{
+    font-size: 22rpx;
+}
+.place{
+    width: 150rpx;
+    font-size: 28rpx;
+    margin-left: 30rpx;
+}
+.buy_btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 30px;
+    width: 70rpx;
+    height: 36rpx;
+    padding: 10rpx 20rpx;
+    background-color: #F03D37;
+    color: #fff;
+    border-radius: 36rpx;
+    margin-right: 20rpx;
+}
+.pricebox{
+    display: flex;
+    align-items: center;
+}
+.original_price{
+    color: #f03d37;
+    font-size: 28rpx;
+}
+.original_price text{
+    font-size:34rpx
+}
+.vipPriceName{
+    border: 2rpx solid #f90;
+    font-size: 22rpx;
+    height: 28rpx;
+    color: #f90;
+    margin-left: 10rpx;
+}
+.vipPriceName text{
+    background-color: #f90;
+    color: #fff;
+    height: 100%;
+}
+.vipPriceNameNew{
+    margin-top: 5rpx;
+    color: #999;
+    font-size: 22rpx;
+}
+.map{
+    display: flex;
+    padding: 20rpx 0;
+}
+.map_left{
+}
+.map_right{
+    display: flex;
+    align-items: center;
+    margin-left: 20rpx;
+}
+.map_box{
+    display: flex;
+    flex-flow: column;
+    border-left: 2rpx solid #999;
+    padding:0 50rpx;
+}
+.map_box image{
+    width: 50rpx;
+    height: 50rpx;
+}
+.map_nm{
+    font-size: 32rpx;
+}
+.map_addr{
+    color: #999;
+    font-size: 28rpx;
+    margin-top: 10rpx;
+}

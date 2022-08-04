@@ -1,0 +1,48 @@
+<!-- pages/movieDetail/movieDetail.wxml -->
+<view class="box">
+    <!-- 顶部模块 -->
+    <view class="moveInfo_top">
+        <view class='moveInfo_background' style='background-image: url({{bgcImg}})'></view>
+        <view class='moveInfo_mask'></view>
+        <view class="moveInfo_content">
+            <view class='moveInfo_poster' style='background-image: url({{bgcImg}})'></view>
+            <view class="moveInfo_right">
+                <view class="moveInfo_nm">{{infoArr.nm}}</view>
+                <view class="moveInfo_enm">{{infoArr.enm}}</view>
+                <view class="moveInfo_star" wx:if="{{infoArr.sc!=0}}">
+                    <image wx:for="{{stars}}" src="/images/movieDetailImgs/{{item}}.png" wx:key="index" />
+                    {{infoArr.sc}}
+                </view>
+                <view class="moveInfo_star" wx:else>
+                    <!-- <image wx:for="{{stars}}" src="/images/movieDetailImgs/{{item}}.png" wx:key="index" /> -->
+                    {{infoArr.wish}}人想看
+                </view>
+                <view class="moveInfo_snum">{{infoArr.snum}}人评分</view>
+                <view class="moveInfo_cat">{{infoArr.cat}}</view>
+                <view class="moveInfo_src">{{infoArr.src+'/'+infoArr.dur}}分钟</view>
+                <view class="moveInfo_pubDesc">{{infoArr.pubDesc}}</view>
+            </view>
+        </view>
+    </view>
+    <!-- 剧情简介 -->
+    <view class="moveInfo_shareInfo">
+        <view class="shareInfo_title">剧情简介</view>
+        <view class="shareInfo_content">{{shareInfo_content}}</view>
+    </view>
+    <!-- 演员 -->
+    <!-- 媒体库 -->
+    <view class="media">
+        <view class="media_title">媒体库</view>
+        <scroll-view scroll-x>
+            <view class="media_items">
+                <view wx:for="{{infoArr.photos}}" wx:key="item">
+                    <image src="{{item}}" class="media_img" bindtap="previewImage" id="{{index}}" />
+                </view>
+            </view>
+        </scroll-view>
+        <scroll-view scroll-x></scroll-view>
+    </view>
+    <navigator wx:if="{{infoArr.sc !=0 }}" class="buy" url="/pages/movie_cinema/movie_cinema?movieId={{infoArr.id}}" open-type="redirect">
+        立即购票
+    </navigator>
+</view>

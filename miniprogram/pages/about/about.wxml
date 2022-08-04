@@ -1,0 +1,16 @@
+<!--pages/about/about.wxml-->
+<view>
+    <view class="img">
+        <image src="/images/about/bgc.jpeg"/>
+    </view>
+    <view class="my_info">
+        <view >作者：夜神仙</view>
+        <view >职业：Web前端</view>
+        <view >QQ：594571058</view>
+        <view >微信：yaydj99</view>
+        <view >github：https://github.com/yaydj21</view>
+    </view>
+    <view class="my_info">
+        基于原生小程序的仿猫眼电影，仅供学习和参考，源码在github上，欢迎大家star！
+    </view>
+</view>

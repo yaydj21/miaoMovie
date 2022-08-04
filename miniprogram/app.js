@@ -1,6 +1,20 @@
 // app.js
 App({
+  globalData: { // 全局共享的数据
+    cinema_id: ''
+  },
   onLaunch: function () {
+    wx.request({
+      url:'https://m.maoyan.com/ajax/movieOnInfoList',
+      // method:get 默认是get
+      success:res =>{
+        this.globalData.cinema_id = res.data.movieList[0].id;
+        // console.log(res.data.movieList[0].id);
+        // this.setData({
+        // })
+      }
+    });
+
     if (!wx.cloud) {
       console.error('请使用 2.2.3 或以上的基础库以使用云能力');
     } else {

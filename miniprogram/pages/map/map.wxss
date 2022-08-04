@@ -1,0 +1,16 @@
+/* pages/map/map.wxss */
+map{
+    width: 100vw;
+    height: 90vh;
+}
+.nm{
+    font-weight: 700;
+    font-size: 40rpx;
+}
+.box2{
+    width: 100vw;
+    height: 10vh;
+}
+.addr{
+    font-size:28rpx;
+}

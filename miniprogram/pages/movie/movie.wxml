@@ -1,0 +1,104 @@
+<!-- pages/movie/movie.wxml -->
+<!-- <text>pages/movie/movie.wxml</text> -->
+<!-- 顶部滑动导航栏 -->
+<view class="nav">
+  <view id="0" class="{{currentIndex ==0?'selected':'normal'}}" bindtap="changeSwiperIndex">
+    正在热映
+  </view>
+  <view id="1" class="{{currentIndex ==1?'selected':'normal'}}" bindtap="changeSwiperIndex">
+    即将上映
+  </view>
+</view>
+<!-- 滑动页面 -->
+<!-- swiper：配合滑动导航栏做滑动页面、轮播图 -->
+<swiper current="{{ currentIndex }}" style="height:{{ winHeight }}rpx;" bindchange="swiperChange">
+  <!-- current值就是item的索引 控制默认第一个是哪个item -->
+  <swiper-item>
+    <view wx:for="{{ hotMovie }}" wx:key="item" class="movie_list" id="{{item.id}}" bindtap="goMovieDetail">
+      <view>
+        <image src="{{item.img}}" class="item_img"></image>
+      </view>
+      <view class="item_text">
+        <view class="item_left">
+          <view class="item_nm2d">
+            <text class="item_nm">{{ item.nm }}</text>
+            <!-- <view class="v2d"></view> -->
+            <view class="{{item.version == 'v2d imax'?'v2d':(item.version == ''?'':'v3d')}}"></view>
+          </view>
+          <view class="item_sc" wx:if="{{item.sc != 0}}">
+            <span>{{ item.sc }}</span>
+            分
+          </view>
+          <view class="item_sc" wx:if="{{item.sc == 0}}">
+            <span>{{ item.wish }}</span>
+            人想看
+          </view>
+          <view class="item_star">主演：{{ item.star }}</view>
+          <view>{{ item.showInfo }}</view>
+        </view>
+        <view class="item_btnbox">
+          <view class="item_btn" wx:if="{{item.showStateButton.content == '购票'}}">
+            {{item.showStateButton.content}}
+          </view>
+          <view class="item_btn" style="background-color: rgb(60, 159, 230);" wx:if="{{item.showStateButton.content == '预售'}}">
+            {{item.showStateButton.content}}
+          </view>
+        </view>
+      </view>
+    </view>
+  </swiper-item>
+  <swiper-item>
+    <!-- 近期最受期待 -->
+    <view class="expected">
+      <view class="expected_title">近期最受期待</view>
+      <scroll-view scroll-x>
+        <view class="expected_items">
+          <view class="expected_item" wx:for="{{expectedlist}}" wx:key="item" id="{{item.id}}" bindtap="goMovieDetail">
+            <image src="{{item.img}}" class="expected_img" />
+            <view class="expected_nm">{{item.nm}}</view>
+            <view class="expected_wish">{{item.wish}}人想看</view>
+            <view class="expected_comingTitle">{{item.comingTitle}}</view>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+    <!-- 即将上映 -->
+    <view class="comingList">
+      <view wx:for="{{ comingList }}" wx:key="item" id="{{item.id}}" bindtap="goMovieDetail">
+        <view class="comingList_item">
+          <view wx:if="{{index === 0||comingList[index-1].comingTitle != item.comingTitle}}" class="comingList_title">{{item.comingTitle}}</view>
+          <view class="comingList_text">
+                      <view>
+            <image src="{{item.img}}" class="item_img"></image>
+          </view>
+          <view class="item_text">
+            <view class="item_left">
+              <view class="item_nm2d">
+                <text class="item_nm">{{ item.nm }}</text>
+                <view class="{{item.version == 'v2d imax'?'v2d':(item.version == ''?'':'v3d')}}"></view>
+              </view>
+              <view class="item_sc" wx:if="{{item.sc != 0}}">
+                <span>{{ item.sc }}</span>
+                分
+              </view>
+              <view class="item_sc" wx:if="{{item.sc == 0}}">
+                <span>{{ item.wish }}</span>
+                人想看
+              </view>
+              <view class="item_star">主演：{{ item.star }}</view>
+              <view>{{ item.showInfo }}</view>
+            </view>
+            <view class="item_btnbox">
+              <view class="item_btn" style="background-color: {{item.showStateButton.color }}" wx:if="{{item.showStateButton.content == '预售'}}">
+                {{item.showStateButton.content}}
+              </view>
+              <view class="item_btn" style="background-color: #faaf00" wx:else>想看</view>
+            </view>
+          </view>
+          </view>
+
+        </view>
+      </view>
+    </view>
+  </swiper-item>
+</swiper>

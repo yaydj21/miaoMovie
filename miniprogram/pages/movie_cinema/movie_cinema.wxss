@@ -1,0 +1,72 @@
+/* pages/movie_cinema/movie_cinema.wxss */
+.cinema{
+    padding: 0 20rpx;
+}
+.cinema_item{
+    border-bottom: 2rpx solid rgb(221, 220, 220, .5);
+    padding: 20rpx 0 40rpx 0;
+}
+.item_top,.item_tags,.item_addrs{
+    display: flex;
+}
+.item_nm{
+    font-size: 32rpx;
+    margin: 0 20rpx 20rpx 0;
+    line-height: 36rpx;
+}
+.item_price{
+    font-size: 26rpx;
+    color: #999;
+}
+.item_price span{
+    font-size: 32rpx;
+    color: #f03d37;
+}
+.item_addrs{
+    display: flex;
+    justify-content: space-between;
+    color: #666;
+    margin-bottom: 20rpx;
+    font-size: 28rpx;
+    padding-right: 10rpx;
+}
+.item_addr{
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    margin-right: 10rpx;
+}
+.item_greTag,.item_yelTag{
+    margin: 0 10rpx 20rpx 0;
+    padding: 0 4rpx;
+    border: 2rpx solid green;
+    font-size: 28rpx;
+    line-height: 30rpx;
+    border-radius: 5rpx;
+}
+.item_tags{
+    display: flex;
+    flex-flow: wrap;
+}
+.item_greTag{
+    border-color: #589daf;
+    color: #589daf;
+}
+.item_yelTag{
+    border-color: #f90;
+    color: #f90;
+}
+
+.item_carTag{
+    display: flex;
+    align-items: center;
+}
+.item_carTag image{
+    width: 34rpx;
+    height: 34rpx;
+    margin-right: 5rpx;
+}
+.carTag_text{
+    font-size: 24rpx;
+    color: #999;
+}

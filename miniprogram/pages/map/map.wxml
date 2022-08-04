@@ -1,0 +1,8 @@
+<!-- pages/map/map.wxml -->
+<view class="box">
+    <map id='map' class='map' longitude='{{lng}}' latitude='{{lat}}' show-location markers='{{markers}}'></map>
+    <view class="box2">
+        <view class="nm">{{nm}}</view>
+        <view class="addr">{{addr}}</view>
+    </view>
+</view>

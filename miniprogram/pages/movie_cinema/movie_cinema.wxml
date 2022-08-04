@@ -1,0 +1,33 @@
+<!-- pages/movie_cinema/movie_cinema.wxml -->
+<view class="cinema">
+    <navigator url="/pages/buyTicket/buyTicket?cinemaId={{item.id}}&&movieId={{movieId}}" wx:for="{{cinemas}}" wx:key="item">
+        <view class="cinema_item">
+            <view class="item_top">
+                <view class="item_nm">{{item.nm}}</view>
+                <view class="item_price" wx:if="{{item.sellPrice !=''}}">
+                    <span>{{item.sellPrice}}</span>
+                    元起
+                </view>
+            </view>
+            <view class="item_addrs">
+                <view class="item_addr">{{item.addr}}</view>
+                <view class="item_distance">{{item.distance}}</view>
+            </view>
+            <view class="item_tags">
+                <view class="item_greTag" wx:if="{{item.tag.allowRefund==1}}">退</view>
+                <view class="item_greTag" wx:if="{{item.tag.endorse==1}}">改签</view>
+                <view class="item_greTag" wx:if="{{item.tag.hallType}}" wx:for="{{item.tag.hallType}}" wx:key="item" wx:for-item="hallName">
+                    {{hallName}}
+                </view>
+                <view class="item_yelTag" wx:if="{{item.tag.snack == 1}}">小吃</view>
+                <view class="item_yelTag" wx:if="{{item.tag.vipTag != ''}}">
+                    {{item.tag.vipTag}}
+                </view>
+            </view>
+            <view class="item_carTag" wx:if="{{item.promotion.cardPromotionTag !=''}}">
+                <image src="https://i.maoyan.com/images/dpmmweb/cinemaList/img/base/base64/card.png?requestCode=9f7ef9a272bf0db30af2bf9b18d33ebeu3yq8" />
+                <view class="carTag_text">{{item.promotion.cardPromotionTag}}</view>
+            </view>
+        </view>
+    </navigator>
+</view>

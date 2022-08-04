@@ -1,0 +1,35 @@
+<!-- pages/my/my.wxml -->
+<view>
+    <view class="user">
+        <view class="user_top">
+            <view class="user_img">
+                <image src="/images/my/user_img.jpg" />
+            </view>
+            <view class="username">微信用户</view>
+        </view>
+        <view class="menus">
+            <button class="menu_btn" open-type="share">
+                <view class="menu_left">
+                    <view class="icon">
+                        <image src="/images/my/share.png" />
+                    </view>
+                    <view>分享给朋友</view>
+                </view>
+                <view class="arrow">
+                    <image src="/images/my/arrow.png" />
+                </view>
+            </button>
+            <navigator class="menu" url="/pages/about/about">
+                <view class="menu_left">
+                    <view class="icon">
+                        <image src="/images/my/about.png" />
+                    </view>
+                    <view>关于</view>
+                </view>
+                <view class="arrow">
+                    <image src="/images/my/arrow.png" />
+                </view>
+            </navigator>
+        </view>
+    </view>
+</view>

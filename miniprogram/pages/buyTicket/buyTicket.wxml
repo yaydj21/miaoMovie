@@ -1,0 +1,88 @@
+<!-- pages/buyTicket/buyTicket.wxml -->
+<view>
+    <view class="map">
+        <view class="map_left">
+            <view class="map_nm">{{cinemaData.nm}}</view>
+            <view class="map_addr">{{cinemaData.addr}}</view>
+        </view>
+        <navigator class="map_right" url="/pages/map/map?lat={{cinemaData.lat}}&lng={{cinemaData.lng}}&nm={{cinemaData.nm}}&addr={{cinemaData.addr}}">
+            <view class="map_box">
+                <image src="/images/buyTicket/map.png" class="map_icon"></image>
+            </view>
+        </navigator>
+    </view>
+    <!-- 电影图片背景 -->
+    <view class="moveInfo_top">
+        <view class='moveInfo_background' style='background-image: url(https://p0.pipi.cn/mmdb/25bfd6d72c992367cb537c020675f703a7045.jpg?imageMogr2/thumbnail/2500x2500%3E)'></view>
+        <view class='moveInfo_mask'></view>
+        <!-- 电影图片轮播 -->
+        <scroll-view scroll-x>
+            <view class="banner_items">
+                <view class="banner_item" wx:for="{{movies}}" wx:key="item" id="{{item.id}}">
+                    <image id="{{item.id}}" src="{{item.img}}" class="{{clickId==item.id?newClass:oldClass}}" bindtap="ChangeClsss" />
+                </view>
+            </view>
+        </scroll-view>
+    </view>
+    <view class="moveInfo_bottom" wx:for="{{movies}}" wx:if="{{clickId==item.id}}" wx:key="item">
+        <view class="moveInfo_bottom_title">
+            <view class="moveInfo_bottom_nm">{{item.nm}}</view>
+            <view class="moveInfo_bottom_sc" wx:if="{{item.sc!=0.0}}">{{item.sc}}分</view>
+            <view class="moveInfo_bottom_sc" wx:else>{{item.wish}}人想看</view>
+        </view>
+        <view class="moveInfo_bottom_desc">{{item.desc}}</view>
+    </view>
+    <!-- 电影票日期导航 -->
+    <view class="move_time">
+        <view class="time_items">
+            <scroll-view scroll-x>
+                <view class="time_item" wx:for="{{movies}}" wx:key="item" id="{{item.id}}" wx:if="{{clickId == item.id}}">
+                    <view wx:for="{{item.shows}}" wx:for-item="show" wx:key="show">
+                        <view id="{{index}}" class="{{showID==index?showNewClass:showOldClass}}" bindtap="changeShow">
+                            {{show.dateShow}}
+                        </view>
+                    </view>
+                </view>
+            </scroll-view>
+            <!-- 列表 -->
+            <!-- 工具类 -->
+            <wxs module="until">
+                module.exports = {
+                    addPrice:function(price){
+                        return Number(price)+10;
+                    }
+                }
+            </wxs>
+            <!-- 电影列表 -->
+            <view class="time_item" wx:for="{{movies}}" wx:key="item" wx:if="{{clickId == item.id}}">
+                <view id="{{index}}" style="width:100vw" wx:for="{{item.shows}}" wx:for-item="show" wx:key="show" wx:if="{{index == showID}}">
+                    <view id="{{index}}" class="detail_time" wx:if="{{index == showID}}">
+                        <view wx:for="{{show.plist}}" wx:for-item="plists" class="lists_item" wx:key="plists">
+                            <view class="time_left">
+                                <view class="tm">{{plists.tm}}</view>
+                            </view>
+                            <view class="place">
+                                <view class="lang">{{plists.lang}}{{plists.tp}}</view>
+                                <view class="th">{{plists.th}}</view>
+                            </view>
+                            <view class="price">
+                                <view class="pricebox">
+                                    <view class="original_price">
+                                        <text>{{until.addPrice(plists.vipPrice)}}</text>
+                                        元
+                                    </view>
+                                    <view class="vipPriceName">
+                                        <text>{{plists.vipPriceName}}</text>
+                                        {{plists.vipPrice}}
+                                    </view>
+                                </view>
+                                <view class="vipPriceNameNew">{{plists.vipPriceNameNew}}特惠</view>
+                            </view>
+                            <view class="buy_btn" bindtap="showToast">购票</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
