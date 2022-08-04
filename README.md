@@ -1,12 +1,5 @@
-# 云开发 quickstart
+基于原生的仿猫眼微信小程序，数据API来源猫眼官网的接口，偶尔会抽风需要验证，导致数据加载不出来。
+实现功能有：电影详情页面、影院详情页面、影院地图、分享页面功能等...
 
-这是云开发的快速启动指引，其中演示了如何上手使用云开发的三大基础能力：
-
-- 数据库：一个既可在小程序前端操作，也能在云函数中读写的 JSON 文档型数据库
-- 文件存储：在小程序前端直接上传/下载云端文件，在云开发控制台可视化管理
-- 云函数：在云端运行的代码，微信私有协议天然鉴权，开发者只需编写业务逻辑代码
-
-## 参考文档
-
-- [云开发文档](https://developers.weixin.qq.com/miniprogram/dev/wxcloud/basis/getting-started.html)
-
+项目效果图如下：
+![1.gif](https://cdn.nlark.com/yuque/0/2022/gif/29683660/1659619350647-81d57bc4-dce6-411d-b00e-ecb86c081d71.gif#clientId=u8d106910-fc09-4&crop=0&crop=0&crop=1&crop=1&from=ui&id=ub4beff37&margin=%5Bobject%20Object%5D&name=1.gif&originHeight=710&originWidth=320&originalType=binary&ratio=1&rotation=0&showTitle=false&size=2398267&status=done&style=none&taskId=u523a9205-4115-451a-acba-78ff97cfcbb&title=)![2.gif](https://cdn.nlark.com/yuque/0/2022/gif/29683660/1659619349792-490ecc6e-9864-499e-ac00-2aaf2feea522.gif#clientId=u8d106910-fc09-4&crop=0&crop=0&crop=1&crop=1&from=ui&id=ufcc53070&margin=%5Bobject%20Object%5D&name=2.gif&originHeight=710&originWidth=320&originalType=binary&ratio=1&rotation=0&showTitle=false&size=944108&status=done&style=none&taskId=u81c3287c-0a24-4e33-a029-c6429b59c87&title=)![3.gif](https://cdn.nlark.com/yuque/0/2022/gif/29683660/1659619350021-03e44333-81dd-4dc3-b7bd-325ab1330388.gif#clientId=u8d106910-fc09-4&crop=0&crop=0&crop=1&crop=1&from=ui&id=u46cc56a7&margin=%5Bobject%20Object%5D&name=3.gif&originHeight=1421&originWidth=640&originalType=binary&ratio=1&rotation=0&showTitle=false&size=1321640&status=done&style=none&taskId=ua773a6e7-a421-43b0-8cc5-589e5a3ff0b&title=)![4.gif](https://cdn.nlark.com/yuque/0/2022/gif/29683660/1659619350238-605a56e5-814d-4279-989f-93a58dc04ab7.gif#clientId=u8d106910-fc09-4&crop=0&crop=0&crop=1&crop=1&from=ui&id=u6040505a&margin=%5Bobject%20Object%5D&name=4.gif&originHeight=710&originWidth=320&originalType=binary&ratio=1&rotation=0&showTitle=false&size=1640447&status=done&style=none&taskId=u716975e3-c505-4da5-8481-bffdb574ffb&title=)![5.gif](https://cdn.nlark.com/yuque/0/2022/gif/29683660/1659619350473-150599ef-0d15-427f-8111-0643a3f7058c.gif#clientId=u8d106910-fc09-4&crop=0&crop=0&crop=1&crop=1&from=ui&id=u130184e1&margin=%5Bobject%20Object%5D&name=5.gif&originHeight=710&originWidth=320&originalType=binary&ratio=1&rotation=0&showTitle=false&size=1871741&status=done&style=none&taskId=uc0b8b914-63f4-4d81-84be-7bc134f581f&title=)![6.gif](https://cdn.nlark.com/yuque/0/2022/gif/29683660/1659619352738-10d39349-d154-4978-a8b4-162376c92581.gif#clientId=u8d106910-fc09-4&crop=0&crop=0&crop=1&crop=1&from=ui&id=u26182d00&margin=%5Bobject%20Object%5D&name=6.gif&originHeight=710&originWidth=320&originalType=binary&ratio=1&rotation=0&showTitle=false&size=3489845&status=done&style=none&taskId=u883f982b-84ae-4983-8e11-b29415a87b4&title=)![7.gif](https://cdn.nlark.com/yuque/0/2022/gif/29683660/1659619352092-d36dcc3b-a8e9-478b-ba25-b4961c9168a5.gif#clientId=u8d106910-fc09-4&crop=0&crop=0&crop=1&crop=1&from=ui&id=ua26de947&margin=%5Bobject%20Object%5D&name=7.gif&originHeight=710&originWidth=320&originalType=binary&ratio=1&rotation=0&showTitle=false&size=1858120&status=done&style=none&taskId=ud4f541e3-7763-40ff-8a33-9f3704dee11&title=)
